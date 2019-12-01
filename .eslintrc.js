@@ -17,7 +17,9 @@ module.exports = {
   rules: {
     "@typescript-eslint/explicit-function-return-type": "off",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "camelcase": "off",
+    "@typescript-eslint/camelcase": ["error", {"properties": "never"}]
   },
   settings: {
     react: {

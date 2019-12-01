@@ -12,7 +12,6 @@ interface ListProps {
 
 const CriptoList: React.FC<ListProps> = props => {
   const { data, loading } = props;
-
   const getCriptoLogo = (symbolCurrency: string) => {
     const defaultCryptoLogo =
       "http://www.myiconfinder.com/uploads/iconsets/ad922adbaf0350613b28cec297798d40-loading.png";
