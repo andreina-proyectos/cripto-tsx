@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import CriptoList from "./components/cripto-list/CriptoList";
 
 const App: React.FC = () => {
   const [data, setData] = useState([]);
@@ -23,6 +24,9 @@ const App: React.FC = () => {
         <h1 className="header__title">Criptocurrencies prices</h1>
       </header>
       <main className="app__main">
+        <ul className="main__cripto-list">
+          <CriptoList data={data} />
+        </ul>
       </main>
     </div>
   );
