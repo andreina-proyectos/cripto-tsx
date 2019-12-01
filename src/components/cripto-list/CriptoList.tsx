@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CriptocurrencyData from "../../CriptocurrencyData";
+import "./CriptoList.scss";
 import { Card } from "antd";
 
 interface ListProps {
@@ -10,12 +11,26 @@ interface ListProps {
 
 const CriptoList: React.FC<ListProps> = props => {
   const { data, loading } = props;
+
+  const getCriptoLogo = (symbolCurrency: string) => {
+    const defaultCryptoLogo =
+      "http://www.myiconfinder.com/uploads/iconsets/ad922adbaf0350613b28cec297798d40-loading.png";
+    let cryptoLogoImage: any;
+    try {
+      cryptoLogoImage = require(`../../assets/cryptocurrency-icons/svg/color/${symbolCurrency.toLowerCase()}.svg`);
+    } catch (error) {
+      cryptoLogoImage = defaultCryptoLogo;
+    }
+    return cryptoLogoImage;
+  };
+
   return (
     <React.Fragment>
       {data.map((cripto: CriptocurrencyData) => {
         return (
           <li key={cripto.id} className="cripto-list__cripto">
             <Card style={{ width: 300, marginTop: 16 }} loading={loading}>
+              <img src={getCriptoLogo(cripto.symbol)} alt={cripto.name} className="cripto__image" />
               <h3 className="cripto__name">{cripto.name}</h3>
               <p className="cripto__dolar-price">{`Price USD: ${cripto.price_usd}`}</p>
               <p className="cripto__symbol">{cripto.symbol}</p>
