@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import CriptoList from "./components/cripto-list/CriptoList";
+import Home from "./components/home/Home";
+import Detail from "./components/detail/Detail";
+import { Switch, Route } from "react-router-dom";
 
 const App: React.FC = () => {
   const [data, setData] = useState([]);
@@ -18,6 +20,10 @@ const App: React.FC = () => {
 
   useEffect(() => {
     fetchCriptoData();
+    const interval = setInterval(() => {
+      fetchCriptoData();
+    }, 30000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -25,11 +31,22 @@ const App: React.FC = () => {
       <header className="App__header">
         <h1 className="header__title">Criptocurrencies prices</h1>
       </header>
-      <main className="app__main">
-        <ul className="main__cripto-list">
-          <CriptoList data={data} loading={loading} />
-        </ul>
-      </main>
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={() => {
+            return <Home data={data} loading={loading} />;
+          }}
+        />
+
+        <Route
+          path="/detail/:name"
+          render={routerProps => {
+            return <Detail criptoNameFromPath={routerProps.match.params.name} data={data} />;
+          }}
+        />
+      </Switch>
     </div>
   );
 };
