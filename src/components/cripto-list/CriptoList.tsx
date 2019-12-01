@@ -32,6 +32,7 @@ const CriptoList: React.FC<ListProps> = props => {
 
 CriptoList.propTypes = {
   data: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
 export default CriptoList;
