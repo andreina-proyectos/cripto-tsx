@@ -20,6 +20,10 @@ const App: React.FC = () => {
 
   useEffect(() => {
     fetchCriptoData();
+    const interval = setInterval(() => {
+      fetchCriptoData();
+    }, 30000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
