@@ -15,7 +15,7 @@ const CriptoList: React.FC<ListProps> = props => {
   const getCriptoLogo = (symbolCurrency: string) => {
     const defaultCryptoLogo =
       "http://www.myiconfinder.com/uploads/iconsets/ad922adbaf0350613b28cec297798d40-loading.png";
-    let cryptoLogoImage: any;
+    let cryptoLogoImage: string;
     try {
       cryptoLogoImage = require(`../../assets/cryptocurrency-icons/svg/color/${symbolCurrency.toLowerCase()}.svg`);
     } catch (error) {
