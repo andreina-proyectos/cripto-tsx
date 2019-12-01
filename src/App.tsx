@@ -4,13 +4,15 @@ import CriptoList from "./components/cripto-list/CriptoList";
 
 const App: React.FC = () => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   const criptoApi = "https://api.coinmarketcap.com/v1/ticker/?convert=USD&limit=100";
   const fetchCriptoData = () => {
     fetch(criptoApi)
       .then(response => response.json())
       .then(criptoData => {
         setData(criptoData);
-        console.log(criptoData);
+        setLoading(false);
       });
   };
 
@@ -25,7 +27,7 @@ const App: React.FC = () => {
       </header>
       <main className="app__main">
         <ul className="main__cripto-list">
-          <CriptoList data={data} />
+          <CriptoList data={data} loading={loading} />
         </ul>
       </main>
     </div>
