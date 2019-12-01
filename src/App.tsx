@@ -39,7 +39,7 @@ const App: React.FC = () => {
         <Route
           path="/detail/:name"
           render={routerProps => {
-            return <Detail data={data} />;
+            return <Detail criptoNameFromPath={routerProps.match.params.name} data={data} />;
           }}
         />
       </Switch>
