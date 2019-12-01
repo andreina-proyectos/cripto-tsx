@@ -13,10 +13,10 @@ const Home: React.FC<HomeProps> = props => {
   const { data, loading } = props;
   return (
     <main className="app__main">
-    <ul className="main__cripto-list">
-      <CriptoList data={data} loading={loading} />
-    </ul>
-  </main>
+      <ul className="main__cripto-list">
+        <CriptoList data={data} loading={loading} />
+      </ul>
+    </main>
   );
 };
 

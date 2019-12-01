@@ -8,9 +8,7 @@ interface DetailProps {
 
 const Detail: React.FC<DetailProps> = props => {
   const { data } = props;
-  return (
-    <p>hola</p>
-  );
+  return <p>hola</p>;
 };
 
 Detail.propTypes = {
