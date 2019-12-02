@@ -22,7 +22,7 @@ const App: React.FC = () => {
     fetchCriptoData();
     const interval = setInterval(() => {
       fetchCriptoData();
-    }, 30000);
+    }, 10000);
     return () => clearInterval(interval);
   }, []);
 
@@ -30,6 +30,12 @@ const App: React.FC = () => {
     <div className="App">
       <header className="App__header">
         <h1 className="header__title">Criptocurrencies prices</h1>
+        <h6 className="header__title">
+          Update prices each 10 seconds{" "}
+          <span role="img" aria-label="rocket">
+            🚀
+          </span>
+        </h6>
       </header>
       <Switch>
         <Route
