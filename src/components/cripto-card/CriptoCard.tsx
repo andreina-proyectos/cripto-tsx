@@ -12,7 +12,8 @@ const CriptoCard: React.FC<CardProps> = props => {
   const { cripto } = props;
 
   const getCriptoLogo = (symbolCurrency: string) => {
-    const defaultCryptoLogo = "https://icon-library.net/images/logo-icon-png/logo-icon-png-11.jpg";
+    const defaultCryptoLogo =
+      "http://www.myiconfinder.com/uploads/iconsets/ad922adbaf0350613b28cec297798d40-loading.png";
     let cryptoLogoImage: string;
     try {
       cryptoLogoImage = require(`../../assets/cryptocurrency-icons/svg/color/${symbolCurrency.toLowerCase()}.svg`);
@@ -27,9 +28,9 @@ const CriptoCard: React.FC<CardProps> = props => {
   return (
     <React.Fragment>
       <img src={getCriptoLogo(cripto.symbol)} alt={cripto.name} className="cripto__image" />
-      <h3 className="cripto__name">{cripto.name}</h3>
-      <p className="cripto__dolar-price">{`Price USD: ${cripto.price_usd}`}</p>
-      <div style={{ backgroundColor: data.vibrant }} className="cripto__info-wrapper">
+      <div style={{ backgroundColor: data.vibrant }} className="card__info-wrapper">
+        <h3 className="cripto__name">{cripto.name}</h3>
+        <p className="cripto__dolar-price">{`Price USD: ${cripto.price_usd}`}</p>
         <p className="cripto__symbol">{cripto.symbol}</p>
         <p className="cripto__change-1h">{`Change(1h): ${cripto.percent_change_1h}`}</p>
         <p className="cripto__change-24h">{`Change(24h): ${cripto.percent_change_24h}`}</p>

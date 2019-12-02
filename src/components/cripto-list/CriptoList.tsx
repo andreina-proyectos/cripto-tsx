@@ -19,7 +19,7 @@ const CriptoList: React.FC<ListProps> = props => {
         return (
           <li key={cripto.id} className="cripto-list__cripto">
             <Link to={`/detail/${cripto.id}`} className="cripto__detail-link">
-              <Card style={{ width: 300, marginTop: 16 }} loading={loading}>
+              <Card style={{ width: 300, padding: 0, marginTop: 16 }} loading={loading}>
                 <CriptoCard cripto={cripto} />
               </Card>
             </Link>

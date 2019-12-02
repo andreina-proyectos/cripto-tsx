@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CriptocurrencyData from "../../CriptocurrencyData";
+import "./Detail.scss";
 
 interface DetailProps {
   data: CriptocurrencyData[];
@@ -44,7 +45,7 @@ const Detail: React.FC<DetailProps> = props => {
     <div className="detail-wrapper">
       <img src={getCriptoLogo(criptoFound.symbol)} alt={criptoFound.name} className="cripto__image" />
       <h3 className="cripto__name">{criptoFound.name}</h3>
-      <p className="cripto__dolar-price">{`Price USD: ${criptoFound.price_usd} $`}</p>
+      <p className="cripto__detail-dolar-price">{`Price USD: ${criptoFound.price_usd} $`}</p>
       <p className="cripto__symbol">{criptoFound.symbol}</p>
       <p className="cripto__change-1h">{`Change(1h): ${criptoFound.percent_change_1h}`}</p>
       <p className="cripto__change-24h">{`Change(24h): ${criptoFound.percent_change_24h}`}</p>
