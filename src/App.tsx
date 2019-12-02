@@ -22,7 +22,7 @@ const App: React.FC = () => {
     fetchCriptoData();
     const interval = setInterval(() => {
       fetchCriptoData();
-    }, 30000);
+    }, 300000);
     return () => clearInterval(interval);
   }, []);
 
