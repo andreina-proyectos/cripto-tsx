@@ -9,7 +9,7 @@ interface DetailProps {
 }
 
 const getCriptoLogo = (symbolCurrency: string) => {
-  const defaultCryptoLogo = "https://icon-library.net/images/logo-icon-png/logo-icon-png-11.jpg";
+  const defaultCryptoLogo = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Circle-icons-rocket.svg/600px-Circle-icons-rocket.svg.png";
   let cryptoLogoImage: string;
   try {
     cryptoLogoImage = require(`../../assets/cryptocurrency-icons/svg/color/${symbolCurrency.toLowerCase()}.svg`);

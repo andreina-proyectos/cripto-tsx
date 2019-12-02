@@ -13,7 +13,7 @@ const CriptoCard: React.FC<CardProps> = props => {
 
   const getCriptoLogo = (symbolCurrency: string) => {
     const defaultCryptoLogo =
-      "http://www.myiconfinder.com/uploads/iconsets/ad922adbaf0350613b28cec297798d40-loading.png";
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Circle-icons-rocket.svg/600px-Circle-icons-rocket.svg.png";
     let cryptoLogoImage: string;
     try {
       cryptoLogoImage = require(`../../assets/cryptocurrency-icons/svg/color/${symbolCurrency.toLowerCase()}.svg`);
